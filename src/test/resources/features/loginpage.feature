@@ -16,7 +16,6 @@ Feature: Login Functionality for OpenCart E-commerce Website
     Given I have entered invalid "<username>" and "<password>"
     When I click on the login button
     Then I should see an error message indicating "<error_message>"
-
     Examples:
       | username          | password        | error_message                                         |
       | invalid@email.com | invalidPassword | Warning: No match for E-Mail Address and/or Password. |
