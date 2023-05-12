@@ -6,15 +6,14 @@ import org.openqa.selenium.WebElement;
 
 public class LoginPage {
 
-    private WebDriver driver;
+    WebDriver driver;
 
     // Locators
-    private By emailInputLocator = By.name("email");
-    private By passwordInputLocator = By.name("password");
-    private By loginButtonLocator = By.xpath("//input[@type='submit']");
-    private By forgottenPasswordLinkLocator = By.linkText("Forgotten Password");
-    private By logoutLinkLocator = By.linkText("Logout");
-
+    By userenameTextbox = By.name("username");
+    By passwordTextbox = By.name("password");
+    By loginButtonloc = By.xpath("//*[@type='submit']");
+    By forgottenPasswordLinkLocator=By.xpath("//p[@class='oxd-text oxd-text--p orangehrm-login-forgot-header']");
+    By dashboardPageloc = By.xpath("//*[text()='Time at Work']");
 
     // Constructor
     public LoginPage(WebDriver driver) {
@@ -22,18 +21,18 @@ public class LoginPage {
     }
 
     // Methods
-    public void enterEmail(String email) {
-        WebElement emailInput = driver.findElement(emailInputLocator);
-        emailInput.sendKeys(email);
+    public void enterUsername(String username) {
+        WebElement usernameInput = driver.findElement(userenameTextbox);
+        usernameInput.sendKeys(username);
     }
 
     public void enterPassword(String password) {
-        WebElement passwordInput = driver.findElement(passwordInputLocator);
+        WebElement passwordInput = driver.findElement(passwordTextbox);
         passwordInput.sendKeys(password);
     }
 
     public void clickLoginButton() {
-        WebElement loginButton = driver.findElement(loginButtonLocator);
+        WebElement loginButton = driver.findElement(loginButtonloc);
         loginButton.click();
     }
 
@@ -42,21 +41,22 @@ public class LoginPage {
         forgottenPasswordLink.click();
     }
 
-    public boolean checkForgotPwdLink(){
+    public boolean checkForgotPwdLink() {
         return driver.findElement(forgottenPasswordLinkLocator).isDisplayed();
     }
 
-    public boolean checkLogoutLink(){
-        return driver.findElement(logoutLinkLocator).isDisplayed();
+    public boolean checkDashboardPage() {
+        return driver.findElement(dashboardPageloc).isDisplayed();
     }
 
-    public void login(String email, String password) {
-        enterEmail(email);
+
+    public void login(String username, String password) {
+        enterUsername(username);
         enterPassword(password);
         clickLoginButton();
     }
 
-    public String getForgotPwdPageUrl(){
+    public String getForgotPwdPageUrl() {
         String forgotPwdPageUrl = driver.getCurrentUrl();
         return forgotPwdPageUrl;
     }
