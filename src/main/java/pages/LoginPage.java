@@ -3,6 +3,7 @@ package pages;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import utils.Log;
 
 public class LoginPage {
 
@@ -24,16 +25,19 @@ public class LoginPage {
     public void enterUsername(String username) {
         WebElement usernameInput = driver.findElement(userenameTextbox);
         usernameInput.sendKeys(username);
+        Log.info("Enter Username");
     }
 
     public void enterPassword(String password) {
         WebElement passwordInput = driver.findElement(passwordTextbox);
         passwordInput.sendKeys(password);
+        Log.info("Enter password");
     }
 
     public void clickLoginButton() {
         WebElement loginButton = driver.findElement(loginButtonloc);
         loginButton.click();
+        Log.info("Click login button");
     }
 
     public void clickForgottenPasswordLink() {
@@ -46,6 +50,7 @@ public class LoginPage {
     }
 
     public boolean checkDashboardPage() {
+        Log.info("Dashboard page is displayed");
         return driver.findElement(dashboardPageloc).isDisplayed();
     }
 

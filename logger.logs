@@ -1,0 +1,16 @@
+Project path in runner is : C:\Users\002KU9744\Desktop\Studymaterial\New folder\selenium_cucumber_paralleltstng\selenium_cucumber_testngparallel
+Scenario Name :Successful login with valid credentials
+I am on the OrangeHRM login page
+Enter Username
+Enter password
+Valid username and password entered successfully
+Click login button
+Dashboard page is displayed
+Successful login with valid credentials
+Status :PASSED
+*************************************************************
+************ Test execution status is PASSED ************
+************ Execution ended for : Successful login with valid credentials ************
+*************************************************************
+End of execution for scenario: Successful login with valid credentials
+Driver is closed
