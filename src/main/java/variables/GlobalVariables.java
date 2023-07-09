@@ -1,5 +1,6 @@
 package variables;
 
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.RemoteWebDriver;
 
@@ -16,5 +17,6 @@ public class GlobalVariables {
     
 	public static String featureName,currentScenarioName,ScenarioName,logFolderName,logFolder,logFileName;
     public static boolean skipStatusFlag=false;
+    public static WebDriver driver = null;
 
 }

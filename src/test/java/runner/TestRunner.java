@@ -29,7 +29,7 @@ public class TestRunner extends AbstractTestNGCucumberTests {
     public void setup() throws IOException {
         testRunner = new TestNGCucumberRunner(this.getClass());
         Log.info("Project path in runner is : " + projectPath);
-        Log.setLogDirectoryName();
+       // Log.setLogDirectoryName();
 
     }
 

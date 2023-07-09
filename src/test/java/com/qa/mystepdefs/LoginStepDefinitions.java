@@ -34,7 +34,7 @@ import static variables.GlobalVariables.skipStatusFlag;
 
 public class LoginStepDefinitions {
 
-    private WebDriver driver;
+    private WebDriver driver=DriverFactory.getDriver();
     private LoginPage loginPage = new LoginPage(DriverFactory.getDriver());
 
     public String scenarioID="";
@@ -148,8 +148,8 @@ public class LoginStepDefinitions {
 
     @Given("I am on the OrangeHRM login page")
     public void i_am_on_the_orange_hrm_login_page() {
-        DriverFactory.getDriver().get("https://opensource-demo.orangehrmlive.com/web/index.php/auth/login");
-        DriverFactory.getDriver().manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
+       driver.get("https://opensource-demo.orangehrmlive.com/web/index.php/auth/login");
+        driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
         Log.info("I am on the OrangeHRM login page");
     }
 
@@ -165,7 +165,7 @@ public class LoginStepDefinitions {
     public void i_have_entered_invalid_and(String username, String password) {
         loginPage.enterUsername(username);
         loginPage.enterPassword(password);
-        DriverFactory.getDriver().manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
+        driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
         Log.info("Invalid username "+username+" and password "+password+" entered successfully");
     }
 
